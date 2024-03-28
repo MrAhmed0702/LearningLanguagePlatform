@@ -29,7 +29,9 @@
         <input type="password" class="form-control mb-2" style="width: 348px;" placeholder="Enter Your Password">
     </div>
     <div class="mb-4 d-flex justify-content-center">
-        <button class="btn btn-lg btn-block" style="background-color: #EEE9FB; color: #5125D2; width: 348px;">Sign Up</button>
+        <a asp-controller="UserSelection" asp-action="SelectLanguage">
+            <button class="btn btn-lg btn-block" style="background-color: #EEE9FB; color: #5125D2; width: 348px;" >Sign Up</button>
+        </a>
     </div>
     <div class="text-center">
         <p style="color: black;">Already have an account ? <a style="text-decoration: underline; color: black;" asp-controller="RegistrationAndLogin" asp-action="Login">Login</a></p>
