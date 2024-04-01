@@ -4,10 +4,6 @@ namespace LearningLanguagePlatform.Controllers
 {
     public class UserSelectionController : Controller
     {
-        public IActionResult SelectLanguage()
-        {
-            return View();
-        }
 
         public IActionResult PurposeOflearning()
         {
@@ -18,15 +14,11 @@ namespace LearningLanguagePlatform.Controllers
         {
             return View();
         }
-
+        
         public IActionResult DailyGoals()
         {
             return View();
         }
 
-        public IActionResult WelcomePage()
-        {
-            return View();
-        }
     }
 }

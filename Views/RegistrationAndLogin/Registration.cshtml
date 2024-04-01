@@ -1,6 +1,7 @@
-﻿@model LearningLanguagePlatform.Models.User
+﻿@using LearningLanguagePlatform.ViewModels
+@model RegisterVM
+
 @{
-    ViewData["Title"] = "Registration";
     Layout = null;
 }
 
@@ -17,11 +18,29 @@
         <h2 class="fw-bold" style="color: #88889D;">A platform for language learners</h2>
         <h2 class="fw-bold" style="color: #88889D;">Join and kickstart your learning</h2>
     </div>
-    <form asp-action="Register" method="post">
+    <form asp-action="Registration" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="mb-4 d-flex justify-content-center">
             <input asp-for="Name" class="form-control mb-2" style="width: 348px;" placeholder="Enter Your Name">
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
+
+        <div class="mb-4 d-flex justify-content-center">
+            <select asp-for="SelectLanguage" class="form-control mb-2" style="width: 348px;">
+                <option value="">Select Your Language</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="arabic">Arabic</option>
+                <option value="chinese">Chinese</option>
+                <option value="russian">Russian</option>
+                <option value="japanese">Japanese</option>
+                <option value="italian">Italian</option>
+                <option value="korean">Korean</option>
+            </select>
+            <span asp-validation-for="SelectLanguage" class="text-danger"></span>
+        </div>
+
         <div class="mb-4 d-flex justify-content-center">
             <input asp-for="Email" class="form-control mb-2" style="width: 348px;" placeholder="Enter Your Email">
             <span asp-validation-for="Email" class="text-danger"></span>
@@ -31,11 +50,15 @@
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
         <div class="mb-4 d-flex justify-content-center">
+            <input asp-for="ConfirmPassword" class="form-control mb-2" style="width: 348px;" placeholder="Confirm Password">
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="mb-4 d-flex justify-content-center">
             <button type="submit" class="btn btn-lg btn-block" style="background-color: #EEE9FB; color: #5125D2; width: 348px;">Sign Up</button>
         </div>
     </form>
     <div class="text-center">
-        <p style="color: black;">Already have an account ? <a style="text-decoration: underline; color: black;" asp-controller="RegistrationAndLogin" asp-action="Login">Login</a></p>
+        <p style="color: black;">Already have an account ? <a style="text-decoration: underline; color: black;" asp-controller="RegistrationAndLogin" asp-action="Login"> Login</a></p>
     </div>
     <div class="text-center mb-4">
         <p style="color: #88889D;">By joining I declare that I have read and accept the</p>
@@ -44,5 +67,7 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

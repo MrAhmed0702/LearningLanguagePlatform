@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        /* Add your custom CSS styles here */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+            .timeline:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                width: 2px;
+                background-color: #5125d2;
+                margin-left: -1px;
+            }
+
+        .timeline-item {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+            .timeline-item::after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+
+        .timeline-img {
+            float: left;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        .timeline-content {
+            position: relative;
+            width: calc(100% - 150px);
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-5">Complete Spanish</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-img">
+                    <img src="path/to/image.jpg" alt="Image">
+                </div>
+                <div class="timeline-content">
+                    <h3>Chapter 1: Introductions</h3>
+                    <h4>¡Hola!</h4>
+                    <p>Learn Some Greeting</p>
+                </div>
+            </div>
+            <!-- Add more timeline items here -->
+        </div>
+    </div>
+
+</body>
+</html>
