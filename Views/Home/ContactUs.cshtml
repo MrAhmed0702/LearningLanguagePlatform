@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "ContactUs";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bg-white rounded-3 p-3">
+                    <div class="mb-3">
+                        <label for="name" class="form-label fs-5" style="color: #5125D2;">Name :</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label fs-5" style="color: #5125D2;">Email :</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label fs-5" style="color: #5125D2;">Subject :</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Enter the subject">
+                    </div>
+                    <div class="mb-3">
+                        <label for="course" class="form-label fs-5" style="color: #5125D2;">Course Name :</label>
+                        <input type="text" class="form-control" id="course" placeholder="Enter the course name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="reason" class="form-label fs-5" style="color: #5125D2;">Detailed Reason :</label>
+                        <textarea class="form-control" id="reason" rows="5" placeholder="Enter detailed reason"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary btn-lg w-100" style="background-color: #5125D2;">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid rounded-3 height:400px" src="/images/Rectangle 79.png" alt="Placeholder image">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

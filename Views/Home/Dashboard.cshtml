@@ -1,0 +1,136 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<User> signInManager
+
+@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        .container {
+            max-width: 1473px;
+            height: 100vh;
+            position: relative;
+            background: white;
+        }
+
+        .background-bar {
+            width: 1473px;
+            height: 332px;
+            background: #5125D2;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        /* Circular Progress Bar Styles */
+        .progress {
+            position: absolute;
+            width: 353px;
+            height: 195px;
+            left: 301px;
+            top: 417px;
+            --bs-progress-bg: none;
+        }
+
+            .progress .percentage {
+                position: absolute;
+                left: 151px;
+                top: 61px;
+                text-align: center;
+                font-size: 50px;
+                font-family: Poppins;
+                font-weight: 600;
+                color: white;
+            }
+
+            .progress .progress-bar {
+                width: 190.92px;
+                height: 190.92px;
+                left: 98.53px;
+                top: 0px;
+                position: absolute;
+                transform-origin: 0 0;
+                background: #00000020;
+                border-radius: 9999px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Background Bar -->
+        <div class="background-bar"></div>
+
+        <!-- Profile Information -->
+        <div class="position-absolute text-white" style="left: 492px; top: 158px; font-size: 30px; font-family: Poppins; font-weight: 700; text-transform: capitalize;">Ahmed Mochi</div>
+        <div class="position-absolute text-white" style="left: 492px; top: 203px; text-align: center; font-size: 20px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">India</div>
+        <!-- Add other profile information as needed -->
+        <!-- Progress Bars -->
+        <div class="position-absolute" style="width: 548px; height: 401px; left: 221px; top: 367px; background: #5125D2; border-radius: 11px; border: 1px white solid;"></div>
+        <div class="position-absolute" style="width: 423px; height: 115px; left: 797px; top: 367px; background: #5125D2; border-radius: 11px; border: 1px white solid;"></div>
+        <div class="position-absolute" style="width: 423px; height: 115px; left: 797px; top: 510px; background: #5125D2; border-radius: 11px; border: 1px white solid;"></div>
+        <div class="position-absolute" style="width: 423px; height: 115px; left: 797px; top: 653px; background: #5125D2; border-radius: 11px; border: 1px white solid;"></div>
+        <div class="position-absolute" style="width: 998px; height: 149px; left: 221px; top: 796px; background: #5125D2; border-radius: 11px; border: 1px white solid;"></div>
+        <div class="position-absolute" style="width: 422px; height: 149px; left: 797px; top: 796px; background: #5125D2; border-top-left-radius: 1px; border-top-right-radius: 11px; border: 1px white solid;"></div>
+        <div class="position-absolute" style="width: 274px; height: 152px; left: 221px; top: 616px; background: #5125D2; border-top-left-radius: 1px; border: 1px white solid;"></div>
+        <div class="position-absolute" style="width: 277px; height: 152px; left: 492px; top: 616px; background: #5125D2; border-top-left-radius: 1px; border: 1px white solid;"></div>
+        <!-- Add other progress bars as needed -->
+        <!-- Statistics -->
+        <div class="position-absolute text-white" style="left: 251px; top: 389px; text-align: center; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">Fluency</div>
+        <div class="position-absolute text-white" style="left: 872px; top: 379px; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">Corrections given</div>
+        <div class="position-absolute text-white" style="left: 872px; top: 520px; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">Thumbs Up</div>
+        <div class="position-absolute text-white" style="left: 872px; top: 663px; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">Best corrections</div>
+        <div class="position-absolute text-white" style="left: 253px; top: 813px; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">daily streak</div>
+        <div class="position-absolute text-white" style="left: 251px; top: 904px; font-size: 15px; font-family: Poppins; font-weight: 300; text-transform: capitalize;">sun</div>
+        <div class="position-absolute text-white" style="left: 415px; top: 904px; font-size: 15px; font-family: Poppins; font-weight: 300; text-transform: capitalize;">tue</div>
+        <div class="position-absolute text-white" style="left: 333px; top: 904px; font-size: 15px; font-family: Poppins; font-weight: 300; text-transform: capitalize;">mon</div>
+        <div class="position-absolute text-white" style="left: 497px; top: 904px; font-size: 15px; font-family: Poppins; font-weight: 300; text-transform: capitalize;">wed</div>
+        <div class="position-absolute text-white" style="left: 579px; top: 904px; font-size: 15px; font-family: Poppins; font-weight: 300; text-transform: capitalize;">thu</div>
+        <div class="position-absolute text-white" style="left: 661px; top: 904px; font-size: 15px; font-family: Poppins; font-weight: 300; text-transform: capitalize;">fri</div>
+        <div class="position-absolute text-white" style="left: 743px; top: 904px; font-size: 15px; font-family: Poppins; font-weight: 300; text-transform: capitalize;">sat</div>
+        <div class="position-absolute text-white" style="left: 872px; top: 811px; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">active day</div>
+        <div class="position-absolute text-white" style="left: 285px; top: 638px; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">words learned</div>
+        <div class="position-absolute text-white" style="left: 554px; top: 638px; font-size: 23px; font-family: Poppins; font-weight: 500; text-transform: capitalize;">Certificates</div>
+        <!-- Add other statistics elements as needed -->
+        <!-- Icons -->
+        <div class="position-absolute text-purple" style="left: 825px; top: 408px; text-align: center; font-size: 50px; font-family: Poppins; font-weight: 600; color: #9747FF;">0</div>
+        <div class="position-absolute text-purple" style="left: 825px; top: 549px; text-align: center; font-size: 50px; font-family: Poppins; font-weight: 600; color: #9747FF;">0</div>
+        <div class="position-absolute text-purple" style="left: 825px; top: 693px; text-align: center; font-size: 50px; font-family: Poppins; font-weight: 600; color: #9747FF;">0</div>
+        <div class="position-absolute text-purple" style="left: 832px; top: 852px; text-align: center; font-size: 50px; font-family: Poppins; font-weight: 600; color: #9747FF;">1</div>
+        <div class="position-absolute text-purple" style="left: 245px; top: 681px; text-align: center; font-size: 50px; font-family: Poppins; font-weight: 600; color: #9747FF;">3</div>
+        <div class="position-absolute text-purple" style="left: 509px; top: 681px; text-align: center; font-size: 50px; font-family: Poppins; font-weight: 600; color: #9747FF;">0</div>
+        <div class="position-absolute" style="width: 27px; height: 27px; left: 415px; top: 873px; background: #9747FF; border-radius: 9999px;"></div>
+        <div class="position-absolute" style="width: 27px; height: 27px; left: 497px; top: 873px; background: #D9D9D9; border-radius: 9999px;"></div>
+        <div class="position-absolute" style="width: 27px; height: 27px; left: 333px; top: 873px; background: white; border-radius: 9999px;"></div>
+        <div class="position-absolute" style="width: 27px; height: 27px; left: 251px; top: 873px; background: #D9D9D9; border-radius: 9999px;"></div>
+        <div class="position-absolute" style="width: 27px; height: 27px; left: 579px; top: 873px; background: #D9D9D9; border-radius: 9999px;"></div>
+        <div class="position-absolute" style="width: 27px; height: 27px; left: 661px; top: 873px; background: #D9D9D9; border-radius: 9999px;"></div>
+        <div class="position-absolute" style="width: 27px; height: 27px; left: 743px; top: 873px; background: #D9D9D9; border-radius: 9999px;"></div>
+        <!-- Add other icons as needed -->
+        <!-- Placeholder images -->
+        <img class="position-absolute" style="width: 110px; height: 110px; left: 351px; top: 126px; border-radius: 50%;" src="~/images/bussiness-man.png" />
+        <img class="position-absolute" style="width: 30px; height: 30px; left: 245px; top: 641px;" src="~/images/Combo Chart.png" />
+        <img class="position-absolute" style="width: 30px; height: 30px; left: 511px; top: 641px;" src="~/images/Certificate.png" />
+        <img class="position-absolute" style="width: 30px; height: 30px; left: 823px; top: 382px;" src="~/images/Communication.png" />
+        <img class="position-absolute" style="width: 30px; height: 30px; left: 823px; top: 523px;" src="/images/Facebook Like.png" />
+        <img class="position-absolute" style="width: 30px; height: 30px; left: 823px; top: 666px;" src="~/images/Trophy.png" />
+        <img class="position-absolute" style="width: 30px; height: 30px; left: 823px; top: 814px;" src="/images/Time Machine.png" />
+        <!-- Add other placeholder images as needed -->
+        <!-- Circular Progress Bar -->
+        <div class="progress">
+            <div class="percentage">1%</div>
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+</body>
+</html>
+
