@@ -61,6 +61,15 @@ namespace LearningLanguagePlatform.Controllers
 
                 if (result.Succeeded)
                 {
+                    if (user.Email == "ahmed@admin.com")
+                    {
+                        await userManager.AddToRoleAsync(user, "Admin");
+                    }
+                    else
+                    {
+                        await userManager.AddToRoleAsync(user, "User");
+                    }
+
                     await signInManager.SignInAsync(user, false);
                     return RedirectToAction("Login", "RegistrationAndLogin");
                 }

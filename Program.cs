@@ -28,6 +28,7 @@ builder.Services.AddIdentity<User, IdentityRole>
             s.Password.RequireLowercase = false;
         }
     )
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<UserDBContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
@@ -52,5 +53,17 @@ app.MapControllerRoute(
     pattern: "{controller=RegistrationAndLogin}/{action=Login}/{id?}");
 //pattern: "{controller=Home}/{action=LearningPage}/{id?}");
 
+using(var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+    var roles = new[] { "Admin", "User" };
+
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+            await roleManager.CreateAsync(new IdentityRole(role));
+    }
+}
 
 app.Run();

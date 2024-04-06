@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<User> signInManager
+
+@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    @if (User.IsInRole("Admin"))
+    {
+        <h1> Hi Admin!!!</h1>
+    }
+
+    <div style="width: 1440px; height: 1157px; padding-top: 157px; padding-bottom: 239px; padding-left: 407px; padding-right: 406px; background: white; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
+        <div style="width: 627px; height: 1881px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            <div style="position: relative; left: 200px; bottom: 17px; color: black; font-size: 40px; font-family: Poppins; font-weight: 600; text-transform: capitalize; word-wrap: break-word">اكمل تعلم العربيه</div>
+            <div style="width: 627px; height: 808px; position: relative">
+                <div style="width: 201px;
+            height: 42.32px;
+            left: 20px;
+            top: 14.11px; position: absolute; text-align: center; color: black; font-size: 30px; font-family: Poppins; font-weight: 600; text-transform: capitalize; word-wrap: break-word">
+                    الدرس 1: التعريفات
+                </div>
+                <div style="width: 627px; height: 700px; left: 0px; top: 0px; position: absolute; border-radius: 20px; border: 1px #88889D solid"></div>
+                <div style="width: 577px; height: 0px; left: 25px; top: 76.64px; position: absolute; border: 8px #88889D solid"></div>
+                <div style="width: 74px; height: 0px; left: 25px; top: 76.64px; position: absolute; border: 8px #5125D2 solid"></div>
+                <div style="width: 324px; height: 94.04px; left: 14px; top: 127.89px; position: absolute">
+                    <div style="width: 77px; height: 36.67px; left: 113px; top: 11.69px; position: absolute; text-align: center; color: black; font-size: 26px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">مرحبا!!</div>
+                    <div style="width: 211px; height: 28.21px; left: 70px; top: 54.03px; position: absolute; text-align: center; color: #88889D; font-size: 20px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">تعلم بعض التحيات</div>
+                    <div style="width: 100px; height: 94.04px; left: 0px; top: 0px; position: absolute; border-radius: 9999px; border: 2px #5125D2 solid"></div>
+                    <img style="width: 90px; height: 84.63px; left: 5px; top: 5.11px; position: absolute; border-radius: 9999px" src="https://via.placeholder.com/90x85" />
+                </div>
+                <div style="width: 30px; height: 30px; left: 49px; top: 202.12px; position: absolute; background: #5125D2; border-radius: 9999px"></div>
+                <div style="width: 32px; height: 32px; padding: 3px; left: 48px; top: 201px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+                    <div style="width: 26px; height: 26px; background: white"></div>
+                </div>
+                <div style="width: 37.06px; height: 0px; left: 64px; top: 230px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 2px #5125D2 solid"></div>
+                <div style="width: 100px; height: 94.04px; left: 14px; top: 267.06px; position: absolute; border-radius: 9999px; border: 2px #5125D2 solid"></div>
+                <div style="width: 471px; height: 84.63px; left: 19px; top: 271.76px; position: absolute">
+                    <div style="width: 201px; height: 36.67px; left: 75px; top: 7.52px; position: absolute; text-align: center; color: black; font-size: 26px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">تعلم قول اسمك</div>
+                    <div style="width: 150px; height: 28.21px; left: 108px; top: 49.84px; position: absolute; text-align: center; color: #88889D; font-size: 20px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">حيا الناس وقول اسمك</div>
+                    <img style="width: 90px; height: 84.63px; left: 0px; top: 0px; position: absolute; border-radius: 9999px" src="https://via.placeholder.com/90x85" />
+                </div>
+                <div style="width: 30px; height: 30px; left: 49px; top: 341.29px; position: absolute; background: #5125D2; border-radius: 9999px"></div>
+                <div style="width: 32px; height: 32px; padding: 3px; left: 48px; top: 340px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+                    <div style="width: 26px; height: 26px; background: white"></div>
+                </div>
+                <div style="width: 37px; height: 0px; left: 63px; top: 369px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 2px #5125D2 solid"></div>
+                <div style="width: 310px; height: 36.67px; left: 127px; top: 554px; position: absolute; color: black; font-size: 26px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">ماذا تعلمت</div>
+                <div style="left: 127px; top: 593.54px; position: absolute; text-align: center; color: #88889D; font-size: 20px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">اختبر مهاراتك للوصول إلى الدرس التالي</div>
+                <div style="width: 487px; height: 94.04px; left: 14px; top: 406.23px; position: absolute">
+                    <div style="width: 310px; height: 36.67px; left: 10px; top: 12.22px; position: absolute; text-align: center; color: black; font-size: 26px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">القاء التحياه</div>
+                    <div style="width: 374px; height: 28.21px; left: 25px; top: 54.54px; position: absolute; text-align: center; color: #88889D; font-size: 20px; font-family: Poppins; font-weight: 500; text-transform: capitalize; word-wrap: break-word">تعلم كيف تسال عن احول الناس</div>
+                    <div style="width: 100px; height: 94.04px; left: 0px; top: 0px; position: absolute; border-radius: 9999px; border: 2px #88889D solid"></div>
+                    <img style="width: 90px; height: 84.63px; left: 5px; top: 4.70px; position: absolute; border-radius: 9999px" src="https://via.placeholder.com/90x85" />
+                </div>
+                <div style="width: 45.14px; height: 0px; left: 63px; top: 500.27px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 2px #88889D solid"></div>
+                <div style="width: 100px; height: 94.04px; left: 14px; top: 544.23px; position: absolute; border-radius: 9999px; border: 2px #88889D solid"></div>
+                <div style="width: 30px; height: 28.21px; left: 49px; top: 615.46px; position: absolute; border-radius: 9999px"></div>
+                <img style="width: 90px; height: 85px; left: 19px; top: 549px; position: absolute; border-radius: 40px;" src="https://via.placeholder.com/90x85" />
+            </div>
+
+</body>
+</html>
