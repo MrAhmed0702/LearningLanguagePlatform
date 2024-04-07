@@ -26,12 +26,27 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item d-flex align-items-center">
                             <img src="/images/OpenBook.png" alt="Logo" width="30" height="24" style="margin-right: 1px;">
                             <a class="nav-link active" aria-current="page" asp-action="LearningPage" asp-controller="Home" style="color: white;">Learn</a>
                         </li>
                     </ul>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <ul class="navbar-nav me-2">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="userInfoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    UserInfo
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="userInfoDropdown">
+                                    <li>
+                                        <a class="dropdown-item text-white" asp-action="ShowUser" asp-controller="Home" style="background-color: #5125D2;">Show User Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
                     @if (signInManager.IsSignedIn(User))
                     {
                         <ul class="navbar-nav ms-auto">

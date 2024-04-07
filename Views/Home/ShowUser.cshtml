@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<User> signInManager
+@model List<LearningLanguagePlatform.Models.User>
+
+@{
+    ViewData["Title"] = "ShowUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div>
+    <h1 style="text-align:center;">User Details</h1>
+    <table class="table table-bordered table-responsive table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Selected Language</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.SelectedLanguage</td>
+                    <td>@user.Email</td>
+                    <td>
+                        <a class="btn btn-lg btn-block" style="background-color: #EEE9FB; color: #5125D2;" asp-action="EditUser" asp-controller="Home" asp-route-id="@user.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-lg btn-block" style="background-color: #EEE9FB; color: #5125D2;" asp-action="DeleteUser" asp-controller="Home" asp-route-id="@user.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
