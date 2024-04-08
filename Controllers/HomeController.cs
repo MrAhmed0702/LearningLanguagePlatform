@@ -82,13 +82,21 @@ namespace LearningLanguagePlatform.Controllers
             return RedirectToAction("ShowUser", "Home");
         }
 
+        public IActionResult Greeting()
+        {
+            return View();
+        }
 
+        public IActionResult SayMyName()
+        {
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
